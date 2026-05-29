@@ -1,0 +1,26 @@
+dataset_path: longvideobench/LongVideoBench
+dataset_kwargs:
+  token: True
+  cache_dir: longvideobench
+  video: True
+  force_download: False
+  local_files_only: False
+task: longvideobench_val_v
+test_split: validation
+doc_to_visual: !function utils.longvideobench_doc_to_visual_v
+doc_to_text: !function utils.longvideobench_doc_to_text
+doc_to_target: "correct_choice"
+generation_kwargs:
+  max_new_tokens: 8196
+  temperature: 0.1
+  top_p: 0.001
+  do_sample: true
+process_results: !function utils.longvideobench_process_results
+metric_list:
+  - metric: lvb_acc
+    aggregation: !function utils.longvideobench_aggregate_results
+    higher_is_better: true
+
+lmms_eval_specific_kwargs:
+  default:
+    post_prompt: "Please answer this question based on the visual content.\nProvide your thinking process between the <think> and </think> tags, and then give your final answer between the <answer> and </answer> tags.\nPlease provide only the single option letter (e.g., A, B, C, D, etc.) within the <answer>...</answer> tags."

@@ -1,0 +1,30 @@
+task: videokr_eval
+tag: video_qa
+dataset_path: minuzero/VideoKR-Eval
+dataset_kwargs:
+  data_files:
+    test:
+      - VideoKR_eval.jsonl
+test_split: test
+output_type: generate_until
+doc_to_visual: !function utils.videokr_eval_doc_to_visual
+doc_to_text: !function utils.videokr_eval_doc_to_text
+doc_to_target: !function utils.videokr_eval_doc_to_target
+generation_kwargs:
+  max_new_tokens: 8192
+  temperature: 0.1 #0
+  top_p: 0.001 #1.0
+  num_beams: 1
+  do_sample: true
+process_results: !function utils.videokr_eval_process_results
+metric_list:
+  - metric: videokr_eval_acc
+    aggregation: !function utils.videokr_eval_aggregate_results
+    higher_is_better: true
+lmms_eval_specific_kwargs:
+  default:
+    pre_prompt: ""
+    post_prompt_mc: "Please answer this question based on the visual content.\nProvide your thinking process between the <think> and </think> tags, and then give your final answer between the <answer> and </answer> tags.\nPlease provide only the single option letter (e.g., A, B, C, D, etc.) within the <answer>...</answer> tags."
+    post_prompt_oe: "Please answer this question based on the visual content.\nProvide your thinking process between the <think> and </think> tags, and then give your final answer between the <answer> and </answer> tags.\nPlease provide only your final answer within the <answer>...</answer> tags."
+metadata:
+  version: 0.1

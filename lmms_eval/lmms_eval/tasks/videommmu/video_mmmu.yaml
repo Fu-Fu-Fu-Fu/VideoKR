@@ -1,0 +1,14 @@
+group: video_mmmu
+task:
+- video_mmmu_adaptation
+- video_mmmu_comprehension
+- video_mmmu_perception
+aggregate_metric_list:  
+  - metric: mmmu_acc  
+    weight_by_size: True
+generation_kwargs:
+  max_new_tokens: 8192
+  temperature: 0.1
+  top_p: 0.001
+  num_beams: 1
+  do_sample: true

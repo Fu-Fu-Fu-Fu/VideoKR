@@ -1,0 +1,18 @@
+dataset_path: lmms-lab/VideoMMMU
+dataset_kwargs:
+  token: True
+  video: True
+  cache_dir: video_mmmu
+generation_kwargs:
+  max_new_tokens: 8192
+  temperature: 0.1
+  top_p: 0.001
+  num_beams: 1
+  do_sample: true
+lmms_eval_specific_kwargs:
+  default:
+    mcq_context: "The image for this question is at the end of the video."
+    open_context: "The image for this question is at the end of the video."
+    perception_context: "Please ignore the quiz question in the last frame of the video."
+    post_prompt_mc: "Please answer this question based on the visual content.\nProvide your thinking process between the <think> and </think> tags, and then give your final answer between the <answer> and </answer> tags.\nPlease provide only the single option letter (e.g., A, B, C, D, etc.) within the <answer>...</answer> tags."
+    post_prompt_oe: "Please answer this question based on the visual content.\nProvide your thinking process between the <think> and </think> tags, and then give your final answer between the <answer> and </answer> tags.\nPlease provide only your final answer within the <answer>...</answer> tags."

@@ -1,0 +1,7 @@
+include: _default_template_yaml
+task: mvbench_episodic_reasoning
+dataset_name: episodic_reasoning
+test_split: train
+lmms_eval_specific_kwargs:
+  default:
+    sub_task: episodic_reasoning

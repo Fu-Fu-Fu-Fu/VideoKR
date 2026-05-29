@@ -1,0 +1,49 @@
+eval/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Environments and local config
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+environment.yml
+
+# Experiment outputs and logs
+/outputs/
+/results/
+/result*/
+/my_test*/
+/prompt_ab_test*/
+/logs/
+/local_log/
+wandb/
+*.log
+*.out
+*.err
+gpu_util_*.csv
+core-*
+
+# Local data, model weights, and caches
+/data/
+/datasets/
+/checkpoints/
+/models/
+/cache/
+/.cache/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
