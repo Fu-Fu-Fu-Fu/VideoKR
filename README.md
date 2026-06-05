@@ -1,7 +1,7 @@
 # VideoKR: Towards Knowledge- and Reasoning-Intensive Video Understanding
 
 <p align="center">
-    🤗 <a href="https://huggingface.co/collections/minuzero/videokr">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp📄 <a href="https://arxiv.org/abs/XXXX.XXXXX">arXiv</a>
+    🤗 <a href="https://huggingface.co/collections/minuzero/videokr">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp📄 <a href="https://arxiv.org/pdf/2606.05259">arXiv</a>
 </p>
 
 
