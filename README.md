@@ -194,5 +194,13 @@ This repository builds on the excellent [LLaMA-Factory](https://github.com/hiyou
 If you find VideoKR useful in your research, please cite our paper:
 
 ```bibtex
-arxiv todo
+@misc{fu2026videokrknowledgereasoningintensivevideo,
+      title={VideoKR: Towards Knowledge- and Reasoning-Intensive Video Understanding}, 
+      author={Lin Fu and Zheyuan Yang and Yang Wang and Tingyu Song and Arman Cohan and Yilun Zhao},
+      year={2026},
+      eprint={2606.05259},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2606.05259}, 
+}
 ```
